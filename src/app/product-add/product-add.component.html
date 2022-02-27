@@ -1,0 +1,49 @@
+<table class="table table-bordered">
+  <tbody>
+  <tr>
+    <td><label>Image: </label><input type="file" (change)="handleUpload($event)" [(ngModel)]="newProduct.url" placeholder="Choose Image"></td>
+    <td><label>Name: </label><input type="text" [(ngModel)]="newProduct.pName" placeholder="Product Name"></td>
+    <td><label>Code: </label><input type="text" [(ngModel)]="newProduct.code" placeholder="Product Code"></td>
+  </tr>
+  <tr>
+    <td><label>Availability Date: </label><input type="text" [(ngModel)]="newProduct.available"
+        placeholder="Product availability"></td>
+    <td><label>Price: </label><input type="text" [(ngModel)]="newProduct.price" placeholder="Product price"></td>
+    <td><label>Rating: </label><input type="text" [(ngModel)]="newProduct.star" placeholder="Product Star"></td>
+
+  </tr>
+  <tr>
+    <td colspan="3"><button class="btn btn-success" (click)="onClick()">
+        ADD
+      </button></td>
+  </tr>
+  </tbody>
+
+</table>
+
+
+
+
+
+<!-- <form>
+    <div class="row">
+      <div class="col">
+        <input type="file" class="form-control" placeholder="Choose Image" (change)="handleUpload($event)" [(ngModel)]="newProduct.url">
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="newProduct.pName" class="form-control" placeholder="Product Name">
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="newProduct.code" class="form-control" placeholder="Product Code">
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="newProduct.available" class="form-control" placeholder="Product availability">
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="newProduct.price" class="form-control" placeholder="Product Price">
+      </div>
+      <button class="btn btn-success" (click)="onClick()">
+        ADD
+    </button>
+    </div>
+  </form> -->

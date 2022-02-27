@@ -1,0 +1,43 @@
+<app-product-add (productAdded)="add($event)"></app-product-add>
+<h1>Filter</h1>
+<input type="text" placeholder="Filter By Name" (keyup.backspace)="originalTable()" (keyup)="filterTable()" [(ngModel)]="filterName">
+<h1>Products List</h1>
+<table *ngIf="products.length>0" class="table table-hover">
+    <thead>
+        <tr>
+            <th><button (click)="toggleDisplay()" [ngClass]="!isShow ? 'btn btn-success':'btn btn-danger'">Show/Hide</button></th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Details</th>
+            <th>Delete</th>
+        </tr>
+    </thead>        
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td ><img *ngIf = "isShow" src={{product.url}} alt="productImg"></td>
+            <td>{{product.pName}}</td>
+            <td>{{product.code}}</td>
+            <td>{{product.available|date}}</td>
+            <td>{{product.price|currency}}</td>
+            <td><app-star [rating]="product.star"></app-star><select [(ngModel)]="product.star"> <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></td>
+            <td>
+                <button (click)="listProducts(product)"
+                
+                class="btn btn-success">
+                    Details
+                </button>
+            </td>
+            <td>
+                <button (click)="delete($event)"
+                class="btn btn-danger">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-product-details [productDetails]="pro"></app-product-details>

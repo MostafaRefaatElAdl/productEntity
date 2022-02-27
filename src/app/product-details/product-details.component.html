@@ -1,0 +1,18 @@
+<br>
+<div>
+    <h1>
+        Product Details
+    </h1>
+
+    <table *ngIf="productDetails" class="table table-dark table-hover">
+        <tbody>
+            <tr>
+                <td><img src={{productDetails?.url}} alt=""></td>
+                <td>{{productDetails?.pName}}</td>
+                <td>{{productDetails?.code}}</td>
+                <td>{{productDetails?.available|date}}</td>
+                <td>{{productDetails?.price|currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
